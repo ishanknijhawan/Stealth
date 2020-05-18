@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "180087503612",
+    "firebase_url": "https://stealthstartup-33e37.firebaseio.com",
+    "project_id": "stealthstartup-33e37",
+    "storage_bucket": "stealthstartup-33e37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180087503612:android:7b8b3db9418799e012f579",
+        "android_client_info": {
+          "package_name": "com.ishanknijhawan.stealthstartup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180087503612-q1lgir56s7moduenbe31u12uo58lo9qb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ishanknijhawan.stealthstartup",
+            "certificate_hash": "f3b03b7d7982a9bed3133d59b348125c7b1b7d0e"
+          }
+        },
+        {
+          "client_id": "180087503612-il59dgaubuh72c6jem7avorm33g1ujst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbK5Tic06-xGRXCSVsutKpFzaauGbYtpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180087503612-il59dgaubuh72c6jem7avorm33g1ujst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

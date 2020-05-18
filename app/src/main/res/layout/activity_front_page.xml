@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:theme="@style/FrontPageTheme"
+    android:layout_height="match_parent"
+    tools:context=".FrontPageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="32dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nothing_you_could_do"
+            android:text="Stealth"
+            android:textSize="65sp" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:id="@+id/image"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_undraw_profile_data_mk6k"
+            android:layout_height="200dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="150dp"
+            android:id="@+id/btnSignIn"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textColor="#000"
+            app:cornerRadius="8dp"
+            android:foregroundGravity="center"
+            android:layout_marginTop="72dp"
+            android:gravity="center"
+            android:text="Sign In"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:theme="@style/FrontPageTheme"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="150dp"
+            android:foregroundGravity="center"
+            app:cornerRadius="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Sign Up"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:id="@+id/btnSignUp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:theme="@style/FrontPageTheme"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="150dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:id="@+id/googleSignIn"
+            android:layout_marginTop="8dp"
+            android:background="#2a2a2a"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

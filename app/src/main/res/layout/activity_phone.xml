@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".PhoneActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="16dp"
+        android:text="Enter phone number"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/textInputPhone"
+        android:layout_margin="16dp"
+        app:errorEnabled="true"
+        app:counterMaxLength="10"
+        android:dividerPadding="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:counterEnabled="true"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSignInUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone number"
+            android:inputType="number"
+            android:maxLength="10" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:text="Verify"
+        android:id="@+id/btnEnterPhone"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:textAllCaps="false"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/optLayout"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:layout_margin="16dp"
+            android:text="Enter OTP"
+            android:layout_height="wrap_content"/>
+
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/pinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            style="@style/PhoneTheme"
+            android:theme="@style/PhoneTheme"
+            android:layout_marginBottom="8dp"
+            android:inputType="number"
+            app:password="false"
+            app:inputType="number"
+            android:padding="10dp"
+            app:cursorVisible="false"
+            app:pinWidth="40dp"
+            app:pinHeight="40dp"
+            app:pinLength="6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:text="Submit"
+            android:id="@+id/btnSubmit"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>
