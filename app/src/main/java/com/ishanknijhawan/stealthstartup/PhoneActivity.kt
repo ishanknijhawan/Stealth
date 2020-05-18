@@ -10,12 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_phone.*
 import java.util.concurrent.TimeUnit
 import kotlin.coroutines.coroutineContext
 
 class PhoneActivity : AppCompatActivity() {
 
+    private lateinit var phoneInput: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone)
@@ -25,6 +27,8 @@ class PhoneActivity : AppCompatActivity() {
         optLayout.visibility = View.GONE
         textInputPhone.requestFocus()
         val username = intent.getStringExtra("USERNAME")
+        val email = intent.getStringExtra("EMAIL")
+        val database = FirebaseFirestore.getInstance().collection("Users")
 
         pinView.setTextSize(20)
 
@@ -37,6 +41,7 @@ class PhoneActivity : AppCompatActivity() {
             override fun onVerificationCompleted(p0: PhoneAuthCredential) {
                 val code = p0.smsCode
                 pinView.value = code
+                database.document(email!!).update("phone",phoneInput)
                 Toast.makeText(this@PhoneActivity, "Phone number verified", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@PhoneActivity, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK).or(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -50,7 +55,7 @@ class PhoneActivity : AppCompatActivity() {
         }
 
         btnEnterPhone.setOnClickListener {
-            val phoneInput = textInputPhone.editText?.text.toString().trim()
+            phoneInput = textInputPhone.editText?.text.toString().trim()
             if (!validatePhone(phoneInput)){
                 return@setOnClickListener
             }

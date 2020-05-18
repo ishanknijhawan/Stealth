@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
@@ -17,6 +18,9 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
         val actionBar = supportActionBar
+
+        val userMap = hashMapOf<String,String>()
+        val database = FirebaseFirestore.getInstance().collection("Users")
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         val code = intent.getStringExtra("CODE")
@@ -42,8 +46,15 @@ class SignInActivity : AppCompatActivity() {
                 code == "signup" -> {
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailInput, passwordInput)
                         .addOnSuccessListener {
+                            userMap["name"] = userInput
+                            userMap["phone"] = ""
+                            userMap["dob"] = ""
+                            userMap["prof"] = ""
+                            database.document(emailInput).set(userMap)
+
                             val intent = Intent(this, PhoneActivity::class.java)
                             intent.putExtra("USERNAME", userInput)
+                            intent.putExtra("EMAIL", emailInput)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK).or(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                             startActivity(intent)
                         }

@@ -23,7 +23,7 @@
         android:layout_marginTop="16dp"
         android:textSize="20dp"
         android:id="@+id/tvUsername"
-        android:text="Username: ishanknijhawan"
+        tools:text="Username: ishanknijhawan"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_marginTop="16dp"
         android:textSize="20dp"
         android:id="@+id/tvEmail"
-        android:text="Email: ishanknijhawan@gmail.com"
+        tools:text="Email: ishanknijhawan@gmail.com"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -43,7 +43,7 @@
         android:layout_marginTop="16dp"
         android:textSize="20dp"
         android:id="@+id/tvPhone"
-        android:text="Phone: 9560353354"
+        tools:text="Phone: 9560353354"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -53,7 +53,7 @@
         android:layout_marginTop="16dp"
         android:textSize="20dp"
         android:id="@+id/tvPermission"
-        android:text="Contacts permssion: Granted"
+        tools:text="Contacts permssion: Granted"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -76,7 +76,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Date of Birth:  6/09/1998"
+            tools:text="Date of Birth:  6/09/1998"
             android:textSize="20dp"
             android:id="@+id/tvCalendar"
             android:layout_height="wrap_content"/>
@@ -106,7 +106,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="Profession:  Student"
-            android:textSize="20dp"
+            tools:textSize="20dp"
             android:id="@+id/tvProf"
             android:layout_height="wrap_content"/>
 
@@ -114,7 +114,7 @@
             android:layout_width="24dp"
             android:src="@drawable/ic_edit"
             android:layout_centerVertical="true"
-            android:padding="8dp"
+            android:padding="4dp"
             android:tint="@color/cardview_light_background"
             android:layout_marginRight="4dp"
             android:background="?attr/selectableItemBackgroundBorderless"
@@ -127,7 +127,7 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:text="Log out"
-        android:id="@+id/btnSignInSIA"
+        android:id="@+id/btnLogOutMIA"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="72dp"

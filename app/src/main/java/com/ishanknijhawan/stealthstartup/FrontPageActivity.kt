@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_front_page.*
 
 class FrontPageActivity : AppCompatActivity() {
@@ -26,6 +27,8 @@ class FrontPageActivity : AppCompatActivity() {
 
 
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    val userMap = hashMapOf<String,String>()
+    val database = FirebaseFirestore.getInstance().collection("Users")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,10 +99,17 @@ class FrontPageActivity : AppCompatActivity() {
     }
 
     private fun updateUI(user: FirebaseUser?) {
+        userMap["name"] = user?.displayName!!
+        userMap["phone"] = ""
+        userMap["dob"] = ""
+        userMap["prof"] = ""
+        database.document(user.email!!).set(userMap)
+
         val intent = Intent(this, PhoneActivity::class.java)
-        intent.putExtra("USERNAME", user!!.displayName)
+        intent.putExtra("USERNAME", user.displayName)
+        intent.putExtra("EMAIL", user.email)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK).or(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
-        Toast.makeText(this, "Welcome ${user?.displayName}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Welcome ${user.displayName}", Toast.LENGTH_SHORT).show()
     }
 }
