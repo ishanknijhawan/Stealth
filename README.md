@@ -1,6 +1,6 @@
 # Stealth
 
-Download the app link from <u>[here](https://drive.google.com/open?id=1HUxCdnnht3BOi_I5mnrpI0BkAIB_NG7t)</u>
+Download the app from <u>[here](https://drive.google.com/open?id=1HUxCdnnht3BOi_I5mnrpI0BkAIB_NG7t)</u>
 
 App Screenshots
 
